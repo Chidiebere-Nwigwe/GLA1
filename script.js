@@ -90,6 +90,10 @@ button.addEventListener("click", () => {
       input2.style.border = "4px solid red";
       throw "not a number.";
     }
+    if((input1.value.length == 0) || (input2.value.length == 0)){
+      throw "not a number.";
+    }
+  
   } catch (err) {
     result.innerHTML = "Check your input(s), it is " + err;
   }
@@ -100,7 +104,7 @@ button.addEventListener("click", () => {
   if (!isNaN(input2.value)) {
     input2.style.border = "1px solid black";
   }
-  if (!isNaN(input1.value) && !isNaN(input2.value)) {
+  if (!isNaN(input1.value) && !isNaN(input2.value) && (input1.value.length > 0) && (input2.value.length > 0)) {
     result.innerHTML = Number(input1.value) + Number(input2.value);
   }
 });
